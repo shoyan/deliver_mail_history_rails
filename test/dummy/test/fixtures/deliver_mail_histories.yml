@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  mail_to: MyString
+  mail_subject: MyString
+  mail_header: MyString
+  mail_body: MyString
+  send_date: MyString
+
+two:
+  mail_to: MyString
+  mail_subject: MyString
+  mail_header: MyString
+  mail_body: MyString
+  send_date: MyString
