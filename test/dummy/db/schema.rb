@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160118082327) do
+ActiveRecord::Schema.define(version: 20160119050115) do
 
   create_table "deliver_mail_histories", force: :cascade do |t|
     t.string   "mail_to"
@@ -19,6 +19,16 @@ ActiveRecord::Schema.define(version: 20160118082327) do
     t.string   "mail_header"
     t.string   "mail_body"
     t.string   "send_date"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "mail_histories", force: :cascade do |t|
+    t.string   "email_to"
+    t.string   "email_title"
+    t.string   "email_header"
+    t.string   "email_body"
+    t.string   "notify_date"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
