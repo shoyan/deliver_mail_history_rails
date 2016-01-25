@@ -12,6 +12,6 @@ module DeliverMailHistoryRails
   end
 end
 
-DeliverMailHistoryRails::Configuration.configure do |config|
+DeliverMailHistoryRails.configure do |config|
   config.register_observer DeliverMailHistoryRails::Observer, DeliverMailHistoryRails::CustomObserver
 end
