@@ -7,7 +7,7 @@ module DeliverMailHistoryRails
         mail_header: mail.header.to_s,
         mail_body: mail.decode_body,
         send_date: mail.date.to_s(:db)
-      ).save
+      ).save if DeliverMailHistoryRails.register?(mail)
     end
   end
 end
