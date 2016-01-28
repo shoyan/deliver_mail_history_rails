@@ -6,8 +6,16 @@ class Notifications < ApplicationMailer
   #   en.notifications.welcome.subject
   #
   def welcome
+    headers['X-Account-Id'] = '1'
     @greeting = "Hi"
 
     mail to: "to@example.org", subject: "Welcome"
+  end
+
+  def notice
+    headers['X-Account-Id'] = '1'
+    @greeting = "Notice!"
+
+    mail to: "to@example.org", subject: "Notice"
   end
 end

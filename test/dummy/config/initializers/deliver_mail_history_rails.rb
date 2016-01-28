@@ -5,6 +5,7 @@ class CustomObserver < DeliverMailHistoryRails::Observer
       email_title: mail.subject,
       email_header: mail.header.to_s,
       email_body: mail.decode_body,
+      account_id: mail.header["X-Account-Id"].value,
       notify_date: mail.date.to_s(:db)
     ).save
   end

@@ -1,11 +1,8 @@
 require 'test_helper'
 
 class DeliverMailHistoryRailsTest < ActiveSupport::TestCase
-  test "truth" do
-    assert_kind_of Module, DeliverMailHistoryRails
-  end
 
-  def test_send_mail_when_register_database
+  test "register_database" do
     mail = Notifications.welcome.deliver_now
     history = DeliverMailHistory.last
 
@@ -22,5 +19,13 @@ class DeliverMailHistoryRailsTest < ActiveSupport::TestCase
     assert_equal mail.header.to_s, history.email_header
     assert_equal mail.decode_body, history.email_body
     assert_equal mail.date.to_s(:db), history.notify_date
+    assert_equal mail.header['X-Account-Id'].value, history.account_id
   end
+
+  # test "not_register_database" do
+  #   Notifications.notice.deliver_now
+  #   history = DeliverMailHistory.last
+  #
+  #   assert_equal history, []
+  # end
 end
